@@ -17,3 +17,4 @@ WHEN I view future weather conditions for that city
 THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, the wind speed, and the humidity
 WHEN I click on a city in the search history
 THEN I am again presented with current and future conditions for that city
+![image](https://github.com/Cassieellaelaine/Challange-6---Cool-Weather-Dashboard/assets/129123349/96dd8d3d-dd11-407f-bc2f-59856be905d6)
