@@ -42,7 +42,7 @@ function updateWeatherByName(location) {
 		.get(`${apiWeather}?q=${location}&appid=${apiKey}&units=${units}`)
 		.then(displayCurrentTemperature, function () {
 			alert(
-				"I can take up to over 200,000 locations so there's no reason why you should see this message but if you do, try entering a valid city name! 🌃"
+				"Please enter a valid city name!" 🌃"
 			);
 		});
 }
