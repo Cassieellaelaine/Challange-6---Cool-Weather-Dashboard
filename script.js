@@ -21,9 +21,9 @@ function changeTheme() {
 document.addEventListener('touchstart', function () { }, true);
 
 const apiKey = '5a55205c7bdce7e8e36ba6e3ffe358b0';
-const apiWeather = 'https://api.openweathermap.org/data/3.0/weather';
+const apiWeather = 'https://api.openweathermap.org/data/2.5/weather';
 const apiOneCall = 'https://api.openweathermap.org/data/3.0/onecall';
-const apiForecast = 'https://api.openweathermap.org/data/3.0/forecast';
+const apiForecast = 'https://api.openweathermap.org/data/2.5/forecast';
 let units = 'imperial';
 const locationHeading = document.querySelector('#location');
 const geolocationButton = document.querySelector('#geolocation-btn');
