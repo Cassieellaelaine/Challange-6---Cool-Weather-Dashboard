@@ -77,7 +77,7 @@ searchBtn.addEventListener('submit', searchCity);
 function getForecast(coordinates) {
 	axios
 		.get(
-			`${apiOneCall}?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude=minutely,hourly,alerts&appid=${apiKey}&units=${units}`
+			`${apiForecast}?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude=minutely,hourly,alerts&appid=${apiKey}&units=${units}`
 		)
 		.then(displayForecast);
 }
