@@ -20,7 +20,7 @@ function changeTheme() {
 
 document.addEventListener('touchstart', function () { }, true);
 
-const apiKey = '5a55205c7bdce7e8e36ba6e3ffe358b0';
+const apiKey = 'a837ca5f85441136768578f7a6bf1c0c';
 const apiWeather = 'https://api.openweathermap.org/data/2.5/weather';
 const apiOneCall = 'https://api.openweathermap.org/data/3.0/onecall';
 const apiForecast = 'https://api.openweathermap.org/data/2.5/forecast';
