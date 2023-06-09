@@ -42,7 +42,7 @@ function updateWeatherByName(location) {
 		.get(`${apiWeather}?q=${location}&appid=${apiKey}&units=${units}`)
 		.then(displayCurrentTemperature, function () {
 			alert(
-				"Please enter a valid city name!" 🌃"
+				"Please enter a valid city name!" 
 			);
 		});
 }
@@ -57,7 +57,7 @@ function getLocation(position) {
 	const lat = position.coords.latitude;
 
 	axios
-		.get(`${apiWeather}?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`)
+		.get(`${apiWeather}?lat={lat}&lon={lon}&appid=${apiKey}&units=${units}`)
 		.then(displayCurrentTemperature);
 }
 
@@ -76,9 +76,7 @@ searchBtn.addEventListener('submit', searchCity);
 
 function getForecast(coordinates) {
 	axios
-		.get(
-			`${apiForecast}?lat={lat}&lon={lon}&appid=${apiKey}&units=${units}`
-		)
+		.get(`${apiForecast}?lat={lat}&lon={lon}&appid={API key}&units=${units}`)
 		.then(displayForecast);
 }
 
