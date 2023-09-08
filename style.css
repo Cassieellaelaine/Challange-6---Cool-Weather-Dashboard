@@ -33,7 +33,7 @@ body {
 	justify-content: center;
 	flex-direction: column;
 	color:black;
-	background: rgb(163, 149, 163);
+	background: rgb(149, 162, 163);
 	font-family: 'DM Sans', sans-serif;
 	scroll-behavior: smooth;
 }
@@ -41,7 +41,7 @@ body {
 
 body::-webkit-scrollbar,
 body::-webkit-scrollbar-thumb {
-	background-color: rgba(216, 149, 236, 0.25);
+	background-color: rgba(149, 236, 236, 0.25);
 	border-radius: 10px;
 	width: 10px;
 }
@@ -331,12 +331,6 @@ button i {
 }
 
 
-@media only screen and (max-width: 768px) {
-	.full-forecast {
-		-ms-overflow-style: unset;
-		scrollbar-width: unset;
-	}
-
 	.full-forecast::-webkit-scrollbar,
 	.full-forecast::-webkit-scrollbar-thumb {
 		background-color: rgba(149, 205, 236, 0.1);
@@ -344,4 +338,3 @@ button i {
 		height: 10px;
 		display: unset;
 	}
-}

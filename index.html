@@ -4,9 +4,9 @@
 <head>
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="viewport" content="width=device-width, initial-scale=2.0" />
 	<meta name="author" content="Cassie Owens" />
-	<meta property="og:title" content="Weather Dashboard" />
+	<meta property="title" content="Weather Dashboard" />
 
 	<title>Weather Dashboard</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -124,7 +124,7 @@
 							</div>
 						</section>
 						<div class="w-100 d-md-none d-block"></div>
-						<section class="sun-time col-md mt-3 mt-md-2 mt-lg-0">
+						<section class="day-time col-md mt-3 mt-md-2 mt-lg-0">
 							<div class="card">
 								<img src="/assets/day-landscape.png" class="card-img w-100" id="scenery" />
 								<div class="card-img-overlay text-center">
@@ -145,74 +145,8 @@
 				</section>
 				<div class="w-100 d-lg-none d-block mb-2"></div>
 			</div>
-				<section class="global-overview mx-lg-4 col-xl-3 mt-4 flex-lg-shrink-1 me-lg-0 pb-1">
-					<div class="p-6 mt-6"> </div>
-						<h2 class="mx-1 mb-3">Forecast in Major <strong>Cities</strong></h2>
-						<hr />
-						<div class="d-flex flex-column">
-							<div class="container global-item align-items-center">
-								<div class="row align-items-center flex-nowrap justify-content-center">
-									<p class="col">
-										<b class="global-name"></b><br /><small class="country-name"></small>
-									</p>
-
-									<p class="text-end col">
-										<strong><span class="temps global-temps"></span>°<span class="fahrenheit">F
-											</span></strong><br /><small class="global-descriptions"></small>
-									</p>
-								</div>
-							</div>
-							<hr />
-							<div class="container global-item align-items-center">
-								<div class="row align-items-center flex-nowrap justify-content-center">
-									<p class="col">
-										<b class="global-name"></b><br /><small class="country-name"></small>
-									</p>
-									<p class="text-end col">
-										<strong><span class="temps global-temps"></span>°<span class="fahrenheit">F
-											</span></strong><br /><small class="global-descriptions"></small>
-									</p>
-								</div>
-							</div>
-							<hr />
-							<div class="container global-item align-items-center">
-								<div class="row align-items-center flex-nowrap justify-content-center">
-									<p class="col">
-										<b class="global-name"></b><br /><small class="country-name"></small>
-									</p>
-									<p class="text-end col">
-										<strong><span class="temps global-temps"></span>°<span class="fahrenheit">F
-											</span></strong><br /><small class="global-descriptions"></small>
-									</p>
-								</div>
-							</div>
-							<hr />
-							<div class="container global-item align-items-center">
-								<div class="row align-items-center flex-nowrap justify-content-center">
-									<p class="col">
-										<b class="global-name"></b><br /><small class="country-name"></small>
-									</p>
-									<p class="text-end col">
-										<strong><span class="temps global-temps"></span>°<span class="fahrenheit">F
-											</span></strong><br /><small class="global-descriptions"></small>
-									</p>
-								</div>
-							</div>
-							<hr />
-							<div class="container global-item align-items-center">
-								<div class="row align-items-center flex-nowrap justify-content-center">
-									<p class="col">
-										<b class="global-name"></b><br /><small class="country-name"></small>
-									</p>
-									<p class="text-end col">
-										<strong><span class="temps global-temps"></span>°<span class="fahrenheit">F
-											</span></strong><br /><small class="global-descriptions"></small>
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
+			<div id="history"></div>
+			
 			</div>
 
 			<footer class="text-center my-3">

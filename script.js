@@ -1,6 +1,7 @@
 
 const themeToggle = document.querySelector('#flexSwitchCheckChecked');
 themeToggle.addEventListener('click', changeTheme);
+const historyBox=document.getElementById("history")
 
 
 const userTheme = localStorage.getItem('theme');
@@ -20,9 +21,9 @@ function changeTheme() {
 
 document.addEventListener('touchstart', function () { }, true);
 
-const apiKey = 'a837ca5f85441136768578f7a6bf1c0c';
+const apiKey = '5a55205c7bdce7e8e36ba6e3ffe358b0';
 const apiWeather = 'https://api.openweathermap.org/data/2.5/weather';
-const apiOneCall = 'https://api.openweathermap.org/data/3.0/onecall';
+const apiOneCall = 'https://api.openweathermap.org/data/2.5/onecall';
 const apiForecast = 'https://api.openweathermap.org/data/2.5/forecast';
 let units = 'imperial';
 const locationHeading = document.querySelector('#location');
@@ -42,7 +43,7 @@ function updateWeatherByName(location) {
 		.get(`${apiWeather}?q=${location}&appid=${apiKey}&units=${units}`)
 		.then(displayCurrentTemperature, function () {
 			alert(
-				"Please enter a valid city name!" 
+				"Please enter a valid city name"
 			);
 		});
 }
@@ -57,10 +58,11 @@ function getLocation(position) {
 	const lat = position.coords.latitude;
 
 	axios
-		.get(`${apiWeather}?lat={lat}&lon={lon}&appid=${apiKey}&units=${units}`)
+		.get(`${apiWeather}?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`)
 		.then(displayCurrentTemperature);
 }
 
+let cityArray=[]
 
 function searchCity(event) {
 	event.preventDefault();
@@ -68,7 +70,15 @@ function searchCity(event) {
 	if (searchInput) {
 		updateWeatherByName(searchInput);
 	}
+	if (cityArray.indexOf(searchInput)!==-1){
+		return
+	}
+	cityArray.push(searchInput)
+	localStorage.setItem("searchHistory",JSON.stringify(cityArray))	
+	renderSearchHistory()
 }
+
+
 
 const searchBtn = document.querySelector('.search-form');
 searchBtn.addEventListener('submit', searchCity);
@@ -76,7 +86,9 @@ searchBtn.addEventListener('submit', searchCity);
 
 function getForecast(coordinates) {
 	axios
-		.get(`${apiForecast}?lat={lat}&lon={lon}&appid={API key}&units=${units}`)
+		.get(
+			`${apiOneCall}?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude=minutely,hourly,alerts&appid=${apiKey}&units=${units}`
+		)
 		.then(displayForecast);
 }
 
@@ -131,7 +143,7 @@ const todaysDate = document.querySelector('#today');
 function displayCurrentTemperature(response) {
 	if (response.status == 200) {
 		const data = response.data;
-
+console.log("response.data",data)
 
 		const apiSunrise = data.sys.sunrise * 1000;
 		const apiSunset = data.sys.sunset * 1000;
@@ -335,3 +347,22 @@ for (let i = 0; i < 5; i++) {
 
 
 displayGlobalTemperature();
+
+
+function renderSearchHistory(){
+	historyBox.innerHTML=""
+	let cityHistoryString=localStorage.getItem("searchHistory")
+	let cityHistoryArray=JSON.parse(cityHistoryString)
+	console.log("render",cityHistoryArray)
+	for (var i=0; i<cityHistoryArray.length; i++) {
+		var btn = document.createElement('button');
+		btn.setAttribute('type', 'button');
+	
+
+		btn.setAttribute('data-search',cityHistoryArray[i]);
+		btn.textContent = cityHistoryArray[i];
+		historyBox.append(btn);
+	  }
+	}
+	
+
